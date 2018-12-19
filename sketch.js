@@ -1,7 +1,7 @@
 //Number of observations
-var n = 1000;
+var n = 50;
 //Number of sets
-var k = 10;
+var k = 3;
 var master;
 var hubs;
 var subs;
