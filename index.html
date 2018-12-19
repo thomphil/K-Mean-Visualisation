@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>K Mean Visualisation</title>
+  <title>K Mean Clustering Visualisation</title>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/p5.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.7.2/addons/p5.dom.js"></script>
 
@@ -12,17 +12,17 @@
 </head>
 
 <body>
-  <h1>K Means Visualisation</h1>
+  <h1>K Means Clustering Visualisation</h1>
   <h2>Crappy controls</h2>
   <p>a Key = assign each observation to the nearest Cluster hub. Render the observations and the hubs.<br>
     c Key = calculate the new mean for the cluster and use that for the cluster location.<br>
 
-    Basically just push a... then c... then a... then c... until it kinda feels like you might have achieved
-    convergence.
+    Basically just push a... then c serveral times.
   </p>
   No. of Observations: <input type="text" id="observations">
   No. of Hubs: <input type="text" id="hubs">
   <button id="set">SET</button>
+  <button id="manual">MANUALLY PLACE</button>
 </body>
 
 </html>
