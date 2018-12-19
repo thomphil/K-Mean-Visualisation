@@ -1,17 +1,29 @@
-var n;
-var k;
-var master = [];
-var hubs = [];
-var subs = [];
-var colours = [];
+//Number of observations
+var n = 1000;
+//Number of sets
+var k = 10;
+var master;
+var hubs;
+var subs;
+var colours;
 
 function setup() {
+    init();
+}
+
+function init() {
+    master = [];
+    hubs = [];
+    subs = [];
+    colours = [];
+
     createCanvas(windowWidth, windowHeight - 200);
     background(255);
-    //Number of observations
-    n = 1000;
-    //Number of sets
-    k = 10;
+    nInput = select("#observations");
+    kInput = select("#hubs");
+    setButton = select("#set");
+    nInput.value(n);
+    kInput.value(k);
 
     //Assign n observations vectors to the master array
     for (let i = 0; i < n; i++) {
@@ -30,7 +42,13 @@ function setup() {
 }
 
 function draw() {
+    setButton.mousePressed(setEverything);
+}
 
+function setEverything() {
+    n = nInput.value();
+    k = kInput.value();
+    init();
 }
 
 function clearSubs() {
