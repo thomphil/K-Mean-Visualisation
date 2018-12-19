@@ -6,6 +6,7 @@ var master;
 var hubs;
 var subs;
 var colours;
+var manny = false;
 
 function setup() {
     init();
@@ -22,6 +23,7 @@ function init() {
     nInput = select("#observations");
     kInput = select("#hubs");
     setButton = select("#set");
+    manButton = select("#manual");
     nInput.value(n);
     kInput.value(k);
 
@@ -42,7 +44,18 @@ function init() {
 }
 
 function draw() {
+    manButton.mousePressed(manEverything);
     setButton.mousePressed(setEverything);
+}
+
+
+
+function manEverything() {
+    setButton.attribute('disabled', 'true');
+    n = 0;
+    k = kInput.value();
+    init();
+    manny = true;
 }
 
 function setEverything() {
@@ -118,6 +131,16 @@ function drawAssign() {
     }
 }
 
+function mouseDragged() {
+    if (manny) {
+        master.push(createVector(mouseX, mouseY))
+        fill(200);
+        ellipse(mouseX, mouseY, 10);
+        n++;
+        nInput.value(n);
+    }
+}
+
 function keyTyped() {
     if (key === 'a') {
         background(255);
@@ -125,5 +148,8 @@ function keyTyped() {
         drawAssign();
     } else if (key === 'c') {
         hubCalc();
+        background(255);
+        assignment();
+        drawAssign();
     }
 }
