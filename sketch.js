@@ -10,7 +10,7 @@ function setup() {
     //Number of observations
     n = 1000;
     //Number of sets
-    k = 3;
+    k = 10;
 
     //Assign n observations vectors to the master array
     for (let i = 0; i < n; i++) {
