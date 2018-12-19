@@ -18,7 +18,7 @@ function init() {
     subs = [];
     colours = [];
 
-    createCanvas(windowWidth, windowHeight - 200);
+    createCanvas(windowWidth, windowHeight - 300);
     background(255);
     nInput = select("#observations");
     kInput = select("#hubs");
@@ -133,7 +133,7 @@ function drawAssign() {
 
 function mouseDragged() {
     if (manny) {
-        master.push(createVector(mouseX, mouseY))
+        master.push(createVector(mouseX, mouseY));
         fill(200);
         ellipse(mouseX, mouseY, 10);
         n++;
