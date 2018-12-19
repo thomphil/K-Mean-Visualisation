@@ -3,6 +3,7 @@ var k;
 var master = [];
 var hubs = [];
 var subs = [];
+var colours = [];
 
 function setup() {
     createCanvas(windowWidth, windowHeight - 200);
@@ -22,6 +23,7 @@ function setup() {
     for (let i = 0; i < k; i++) {
         hubs.push(createVector(random(10, width - 10), random(10, height - 10)));
         subs.push([]);
+        colours.push(color(random(255), random(255), random(255)));
     }
     drawMast();
     drawHubs();
@@ -82,20 +84,17 @@ function drawHubs() {
 
 function drawAssign() {
     for (let i = 0; i < subs.length; i++) {
-        //Assign a colour for each cluster
-        let colour = color(random(255), random(255), random(255));
-
         //Draw observations from each sub.
         for (const obser of subs[i]) {
-            fill(colour);
-            stroke(colour);
+            fill(colours[i]);
+            stroke(colours[i]);
             line(obser.x, obser.y, hubs[i].x, hubs[i].y);
             noStroke();
             ellipse(obser.x, obser.y, 10);
         }
 
         //Draw each hub
-        fill(colour);
+        fill(colours[i]);
         stroke(0);
         ellipse(hubs[i].x, hubs[i].y, 15);
     }
