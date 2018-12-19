@@ -5,3 +5,4 @@ TODO:\
 [] implement alternative algorithms\
 [] Allow reshuffle of observations\
 [] Allow reshuffle of inital cluster positions\
+[] CONVERGENCE! Anybody! Somebody! ANYBODY!\
