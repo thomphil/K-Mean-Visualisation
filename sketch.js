@@ -8,7 +8,7 @@ function setup() {
     createCanvas(windowWidth, windowHeight - 200);
     background(255);
     //Number of observations
-    n = 50;
+    n = 1000;
     //Number of sets
     k = 3;
 
